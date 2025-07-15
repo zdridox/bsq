@@ -65,7 +65,7 @@ char	**map_to_array()
 			nl_counter++;
 			j = 0;
 			i++;
-			if (nl_counter < g_size_y && nl_counter != 0)
+			if (nl_counter < g_size_y)
 				map[nl_counter] = malloc(g_size_x);
 		}
 		if (nl_counter < g_size_y)
