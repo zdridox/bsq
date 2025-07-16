@@ -17,14 +17,12 @@ int get_g_y()
 	return (g_size_y);
 }
 
-char	*read_file()
+char	*read_file(char *file)
 {
-	char *file;
 	int	fd;
 	char *buffer;
 
 	buffer = malloc(1024);
-	file = "example_map";
 	fd = open(file, O_RDONLY);
 	if (fd == -1)
 	{
@@ -36,13 +34,13 @@ char	*read_file()
 	return buffer;
 }
 
-int map_size()
+int map_size(char *file)
 {
 	int x;
 	int y;
 	char *data;
 
-	data = read_file();
+	data = read_file(file);
 	x = 0;
 	y = data[0] - '0'; // dziala do 9
 	while(data[x + 5] != '\n')
@@ -53,7 +51,7 @@ int map_size()
 	return (x * y);
 }
 
-char	**map_to_array()
+char	**map_to_array(char *file)
 {
 	char **map;
 	char *data;
@@ -61,8 +59,8 @@ char	**map_to_array()
 	int i;
 	int j;
 
-	map_size();
-	data = read_file();
+	map_size(file);
+	data = read_file(file);
 	map = malloc(sizeof(char *) * g_size_y);
 	nl_counter = 0;
 	i = 5;
