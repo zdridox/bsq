@@ -7,6 +7,16 @@
 int g_size_x;
 int g_size_y;
 
+int get_g_x()
+{
+	return (g_size_x);
+}
+
+int get_g_y()
+{
+	return (g_size_y);
+}
+
 char	*read_file()
 {
 	char *file;
@@ -34,7 +44,7 @@ int map_size()
 
 	data = read_file();
 	x = 0;
-	y = data[0] - '0';
+	y = data[0] - '0'; // dziala do 9
 	while(data[x + 5] != '\n')
 		x++;
 	free(data);
@@ -108,14 +118,4 @@ void	free_map(char **map)
 		i++;
 	}
 	free(map);
-}
-
-int main()
-{
-	char **_map;
-
-	_map = map_to_array();
-	print_arr(_map);
-	free_map(_map);
-	return 0;
 }
