@@ -2,7 +2,6 @@
 #include <fcntl.h>
 #include <errno.h>
 #include <unistd.h>
-#include <stdio.h>
 
 int g_size_x;
 int g_size_y;
