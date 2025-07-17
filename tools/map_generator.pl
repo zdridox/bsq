@@ -1,3 +1,4 @@
+#perl map_generator.pl x y denisty | cat > map_name
 use warnings;
 use strict;
 die "Usage: program x y density" unless (scalar(@ARGV) == 3);
